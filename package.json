@@ -1,0 +1,36 @@
+{
+  "name": "hubot-houston",
+  "description": "Hubot script for receiving user's feedback",
+  "version": "0.0.1",
+  "authors": [
+    "Mikhail Sibiryov <m.sibirev@wis.software>"
+  ],
+  "license": "Apache-2.0",
+  "keywords": [
+    "hubot",
+    "hubot-scripts"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tolstoyevsky/hubot-houston.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tolstoyevsky/hubot-houston/issues"
+  },
+  "dependencies": {
+    "hubot-conversation": "1.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.5.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^4.0.0",
+    "eslint-plugin-standard": "^4.0.0"
+  },
+  "scripts": {
+    "lint": "eslint . --ext .js",
+    "pretest": "npm run lint",
+    "test": "echo \"No tests\""
+  }
+}
