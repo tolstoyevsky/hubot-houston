@@ -22,25 +22,21 @@ module.exports = async function issueBot (robot) {
   const Conversation = require('hubot-conversation')
   const conversation = new Conversation(robot)
 
-  function registerIssue(username, userText) {
+  function registerIssue (username, userText) {
     userText = userText.replace('rocketbot', '').trim()
-    let messageToHR = `Получено новое сообщение от пользователя @${username}: \n
-                  ${userText}`
+    let messageToHR = `Получено новое сообщение от пользователя @${username}:\n${userText}`
     robot.messageRoom(SUPPORT_CHANNEL, messageToHR)
   }
 
   robot.respond(/issue$/i, (msg) => {
-
     var dialog = conversation.startDialog(msg)
 
     msg.reply('Пожалуйста, опишите вашу проблему или вопрос в одном сообщении.')
-    
-    dialog.addChoice(/.+/gsi, function(msg2) {
-        let userText = msg2.match[0]
-        registerIssue(msg2.message.user.name, userText)
-        msg2.reply('Спасибо, я передал ваше сообщение команде техподдержки')
-      }
-    )
+
+    dialog.addChoice(/.+/gsi, function (msg2) {
+      let userText = msg2.match[0]
+      registerIssue(msg2.message.user.name, userText)
+      msg2.reply('Спасибо, я передал ваше сообщение команде техподдержки')
+    })
   })
 }
-
