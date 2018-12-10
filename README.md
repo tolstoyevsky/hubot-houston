@@ -1,12 +1,12 @@
 # hubot-houston
 
-A simple script receiving feedback from users.
+A Hubot script for receiving feedback from users.
 
 Based on [hubot-conversation](https://github.com/lmarkus/hubot-conversation) npm module.
 
 ## Usage
 
-`botname issue` command initiates short dialog with the bot. Next message from the user will be interpreted as an issue description and forwarded to the support channel.
+The `botname issue` command initiates a short dialog with the bot. The next message from the user will be interpreted as an issue description and forwarded to the channel specified via the `SUPPORT_CHANNEL` environment variable.
 
 ## Installation
 
@@ -24,7 +24,7 @@ Then add **hubot-houston** to your `external-scripts.json`:
 
 ## Configuration
 
-The script uses the only environment variable, which is mandatory - `SUPPORT_CHANNEL`. It is the name of the channel (which is supposed to be private), where all users' issues will be forwarded.
+The script uses the only environment variable, which is mandatory – `SUPPORT_CHANNEL`. It is the name of the channel (which is supposed to be private), where all users' issues will be forwarded to. The default value of `SUPPORT_CHANNEL` is `support`.
 
 ## Authors
 
